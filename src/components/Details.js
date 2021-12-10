@@ -1,5 +1,28 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const StyledCon = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${(pr) => pr.theme.primaryColor};
+  background-color: ${(pr) => pr.theme.thirdColor};
+
+  p {
+    color: ${(pr) => pr.theme.primaryColor};
+    background-color: ${(pr) => pr.theme.thirdColor};
+
+    height: 17vh;
+    border: 3px solid black;
+    text-shadow: 1px 1px 5px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 const Details = (props) => {
   const { characterName, close } = props;
@@ -18,7 +41,7 @@ const Details = (props) => {
   }, [characterName]);
 
   return (
-    <div className="container">
+    <StyledCon>
       {details && (
         <>
           <ul>
@@ -33,7 +56,7 @@ const Details = (props) => {
         </>
       )}
       <button onClick={close}>Close</button>
-    </div>
+    </StyledCon>
   );
 };
 export default Details;
