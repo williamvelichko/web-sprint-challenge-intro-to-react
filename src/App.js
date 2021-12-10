@@ -40,14 +40,22 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">REACT WARS</h1>
-
-      {character.map((chr) => {
+      {character.map((pr) => {
         return (
-          <Character key={chr.name} info={chr} openDetails={openDetails} />
+          <Character
+            key={pr.name}
+            info={pr}
+            character={character}
+            openDetails={openDetails}
+          />
         );
       })}
       {currentCharacterName && (
-        <Details characterName={currentCharacterName} close={closeDetails} />
+        <Details
+          characterName={currentCharacterName}
+          details={currentCharacterName}
+          close={closeDetails}
+        />
       )}
     </div>
   );

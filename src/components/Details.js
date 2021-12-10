@@ -17,6 +17,23 @@ const Details = (props) => {
       });
   }, [characterName]);
 
-  return <></>;
+  return (
+    <div className="container">
+      {details && (
+        <>
+          <ul>
+            <p>Gender:{details.gender}</p>
+            <p>Height:{details.height}</p>
+            <p>Mass:{details.mass}</p>
+            <p>BirthYear:{details.birth_year}</p>
+            <p>Eye Color:{details.eye_color}</p>
+            <p>Hair Color:{details.hair_color}</p>
+            <p>Skin color:{details.skin_color}</p>
+          </ul>
+        </>
+      )}
+      <button onClick={close}>Close</button>
+    </div>
+  );
 };
 export default Details;

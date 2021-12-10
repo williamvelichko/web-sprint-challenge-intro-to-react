@@ -7,8 +7,9 @@ const Character = (props) => {
 
   return (
     <div className="character">
-      {props.info.name}
-      <button onClick={() => openDetails(info.name)}>See details</button>
+      <h1>{props.info.name}</h1>;
+      <button onClick={() => openDetails(info.name)}>See details</button>;
+      {/* {props.info.name} */}
     </div>
   );
 };
